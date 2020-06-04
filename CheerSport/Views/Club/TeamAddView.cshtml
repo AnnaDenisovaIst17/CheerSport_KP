@@ -1,0 +1,37 @@
+﻿@model Club
+@{
+    ViewData["Title"] = "TeamAddView";
+}
+<div id="greywrap" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 centered">
+                <h2 class="centered"><b>Команда клуба  <a asp-controller="Club" asp-action="ClubView" asp-route-id="@Model.name">@Model.name</a></b></h2>
+                <hr />
+                @using (Html.BeginForm("TeamAddView", "Club", FormMethod.Post))
+                {
+                <fieldset>
+                    <input type="hidden" name="idClub" value="@Model.id" />
+
+                    <p>
+                        <label name="name">Название</label>
+                        <input name="name" />
+                    </p>
+                    <p>
+                        <label name="city">Город</label>
+                        <input name="city" />
+                    </p>
+                    <p><input type="submit" value="Сохранить" /></p>
+                </fieldset>
+                }
+                <hr />
+            </div>
+
+
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
+

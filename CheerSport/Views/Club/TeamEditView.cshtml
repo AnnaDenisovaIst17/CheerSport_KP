@@ -1,0 +1,39 @@
+﻿@using CheerSport.Models.ModelsForView;
+@model ModelForTeamView
+@{
+    ViewData["Title"] = "TeamEditView";
+}
+
+<div id="greywrap" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 centered">
+                <h2 class="centered"><b>Команда клуба  <a asp-controller="Club" asp-action="ClubView" asp-route-id="@Model.selectTeam.Clubid">@Model.allClub.FirstOrDefault(x => x.id == Model.selectTeam.Clubid).name</a></b></h2>
+                <hr />
+                @using (Html.BeginForm("TeamEditPost", "Club", FormMethod.Post))
+                {
+                    <fieldset>
+                        @Html.HiddenFor(m => m.selectTeam.id)
+
+                        <p>
+                            @Html.LabelFor(m => m.selectTeam.name, "Название")  -
+                            @Html.EditorFor(m => m.selectTeam.name)
+                        </p>
+                        <p>
+                            @Html.LabelFor(m => m.selectTeam.city, "Город")  -
+                            @Html.EditorFor(m => m.selectTeam.city)
+                        </p>
+                        <p><input type="submit" value="Сохранить" /></p>
+                    </fieldset>
+                }
+                <hr />
+            </div>
+
+
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@using CheerSport.Models.ModelsForView;
+@model ModelForTrainerView
+@{
+    ViewData["Title"] = "TrainerView";
+}
+
+<div id="greywrap" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 centered">
+                <h2 class="centered"><b>Тренер клуба  <a asp-controller="Club" asp-action="ClubView" asp-route-id="@Model.selectTrainer.Clubid">@Model.allClub.FirstOrDefault(x => x.id == Model.selectTrainer.Clubid).name</a></b></h2>
+                <br>
+                <h4 class="centered">@Model.selectTrainer.surname @Model.selectTrainer.name @Model.selectTrainer.patronymic</h4>
+                <hr />
+                <p><b>Телефон : </b>@Model.selectTrainer.phone</p>
+                <p><b>Дата рождения :</b> @Model.selectTrainer.dateBirth.ToString("dd.MM.yyyy")</p>
+                <p><b>Место работы :</b> @Model.selectTrainer.job</p>
+                <hr />
+            </div>
+            <div class="col-lg-1">
+                <button>
+                    <a asp-controller="Club" asp-action="TrainerEdit" asp-route-id="@Model.selectTrainer.id" class="material-icons">create</a>
+                </button>
+                <form method="post" asp-controller="Club" asp-action="TrainerDelete">
+                    <input type="hidden" value="@Model.selectTrainer.id" name="id" />
+                    <button>
+                        <a class="material-icons">
+                            delete
+                        </a>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="col-lg-4 centered">
+                @if (Model.selectTrainer.photo == "")
+                {
+                    <img class="img-responsive" src="~/images/photo.jpg">
+                }
+                else
+                {
+                    <img class="img-responsive" src="@Model.selectTrainer.photo">
+                }
+
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
+

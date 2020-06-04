@@ -1,0 +1,99 @@
+﻿@using CheerSport.Models.ModelsForView
+@model ModelForClubView
+@{
+    ViewData["Title"] = "ClubView";
+}
+
+
+
+<div class="container containerClub">
+    <div class="row centered divClub">
+        <div class="col-lg-2 listClubs ">
+            <div class="list-group list-group-flush centered">
+
+                @for (int i = 0; i < Model.allClubs.Count(); i++)
+                {
+                    var activeClass = "";
+                    if (Model.selectClub == Model.allClubs[i].id)
+                    {
+                        activeClass = "active";
+
+                    }
+                    <a class="list-group-item list-group-item-action @activeClass" asp-area="" asp-controller="Club" asp-action="ClubInfoView" asp-route-id="@Model.allClubs[i].id">@Model.allClubs[i].name</a>
+                }
+
+            </div>
+        </div>
+        @*<div class="col-lg-1"></div>*@
+        <div class="col-lg-9 infoClub">
+            @*@{await Html.RenderPartialAsync("_InfoClubPartial");}*@
+            <h3 class="centered"><b>Информация о клубе</b></h3>
+            <hr />
+            @{ var selectClub = Model.allClubs.FirstOrDefault(x => x.id == Model.selectClub); }
+            <p><b>Название : </b>@Model.allClubs.FirstOrDefault(x => x.id == Model.selectClub).name</p>
+            <p><b>Город :</b> @selectClub.city</p>
+            <p><b>Дата оплаты взноса :</b> @selectClub.datePay.ToString("dd.MM.yyyy")</p>
+            <hr />
+        </div>
+        <div class="col-lg-1 buttonForClub">
+            <button>
+                <span class="material-icons">
+                    create
+                </span>
+
+            </button>
+            <button>
+                <span class="material-icons">
+                    delete
+                </span>
+            </button>
+         </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <div class="list-group list-group-flush centered">
+                    <button>
+                        <a asp-controller="Club" asp-action="TrainerAddView" asp-route-id="@Model.selectClub" class="material-icons">
+                            library_add
+                        </a>
+                    </button>
+                    <h4><b>Тренера</b></h4>
+
+                    @for (int y = 0; y < Model.trainerOnClub.Count(); y++)
+                    {
+                        <a class="list-group-item listItem list-group-item-action" asp-area="" asp-controller="Club" asp-action="TrainerView" asp-route-id="@Model.trainerOnClub[y].id">@Model.trainerOnClub[y].surname  @Model.trainerOnClub[y].name @Model.trainerOnClub[y].patronymic</a>
+
+                    }
+                </div>
+
+            </div>
+            <div class="col-lg-2">
+                <div class="list-group list-group-flush centered">
+                    <button>
+                        <a asp-controller="Club" asp-action="TeamAddView" asp-route-id="@Model.selectClub" class="material-icons">
+                            library_add
+                        </a>
+                    </button>
+                    <h4><b>Команды</b></h4>
+                    @for (int y = 0; y < Model.teamOnClub.Count(); y++)
+                    {
+                        <a class="list-group-item listItem list-group-item-action" asp-area="" asp-controller="Club" asp-action="TeamView" asp-route-id="@Model.teamOnClub[y].id">@Model.teamOnClub[y].name</a>
+                    }
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="list-group list-group-flush centered">
+                    <h4><b>Спортсмены</b></h4>
+                    @for (int y = 0; y < Model.sportsmenOnClub.Count(); y++)
+                    {
+                        <a class="list-group-item listItem list-group-item-action" asp-area="" asp-controller="" asp-action="" asp-route-id="">@Model.sportsmenOnClub[y].surname  @Model.sportsmenOnClub[y].name @Model.sportsmenOnClub[y].patronymic</a>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>

@@ -1,0 +1,176 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    height:100%
+}
+html{
+    height: 100%;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+.navbar {
+    min-height: 60px;
+    vertical-align: central;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: inset 0px 0px 1px #edf9ff;
+}
+
+.navbar-default {
+    background-image: linear-gradient(to top left, rgb(199, 204, 255), rgb(190, 199, 252), rgb(182, 194, 248), rgb(173, 189, 245), rgb(165, 184, 242), rgb(156, 179, 239), rgb(148, 175, 235), rgb(139, 170, 232), rgb(131, 165, 229), rgb(122, 160, 226), rgb(114, 155, 222), rgb(105, 150, 219));
+}
+    .navbar-default .navbar-brand {
+        FONT-WEIGHT: 700;
+        color: #000;
+        font-size: 22px;
+ }
+.navbar-default .navbar-nav > li > a {
+        FONT-WEIGHT: 600;
+        color: #000;
+        font-size: 18px;
+}
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        color: #ffffff;
+    }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+
+}
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #ffffff;
+        background-color: #E7E7E7;
+    }
+
+#greywrap {
+    background: #f5f5f5;
+    margin-top: 0px;
+    padding-top: 40px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    margin-top:8%;
+
+
+
+}
+
+
+    #greywrap .callout {
+        margin-bottom: 20px;
+    }
+
+    #greywrap p {
+        margin-left: 30px;
+        margin-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size:15px;
+    }
+
+
+.centered {
+    text-align: center;
+}
+hr {
+    width: 20%;
+    border-top:1px solid #1d1d20;
+}
+
+#copyrights {
+    background: #222222;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    #copyrights p {
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    #copyrights a {
+        color: #3498db;
+    }
+
+.credits {
+    color: #999;
+}
+
+.index-body{
+    height:100%;
+}
+
+.divClub {
+    padding-top:20px;
+    margin-top:10px;
+}
+.listClubs{
+    margin-top:20px;
+    padding-top:30px;
+}
+.nav-tabs li{
+    border-bottom:1px solid #1d1d20;
+}
+.list-group h4 b{
+    color:#130698;
+}
+.infoClub h3 b {
+    color: #130698;
+}
+.listItem {
+    /*background-color: #ffe39f;*/
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+    background-image: linear-gradient(to top left, rgb(199, 204, 255), rgb(190, 199, 252), rgb(182, 194, 248), rgb(173, 189, 245), rgb(165, 184, 242), rgb(156, 179, 239), rgb(148, 175, 235), rgb(139, 170, 232), rgb(131, 165, 229), rgb(122, 160, 226), rgb(114, 155, 222), rgb(105, 150, 219));
+}
+.buttonForClub{
+    margin-top:20px;
+}
+h2 b {
+    color: #130698;
+}
+@media (min-width: 1200px){
+    .container{
+        width:inherit;
+    }
+}
+

@@ -1,0 +1,28 @@
+﻿@model UnionRK
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="greywrap" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 centered">
+                <img class="img-responsive" src="~/images/logo.jpg" >
+            </div>
+            <div class="col-lg-8 centered">
+                <h2>Союз ЧИР СПОРТ и ЧЕРЛИДИНГА Республики Коми </h2>
+                <h4 class="centered">Структурное подразделение СЧСЧР России</h4>
+                <hr />
+                <p><b>Президент : </b>@Model.president</p>
+                <p><b>Телефон :</b> @Model.phone</p>
+                <p><b>E-mail :</b> @Model.email</p>
+                <p><b>Адрес : </b>@Model.address</p>
+                <p><b>Год аккредитации : </b>@Model.yearOfAccreditation</p>
+
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <br>
+    <br>
+</div>

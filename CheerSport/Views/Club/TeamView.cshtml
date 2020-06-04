@@ -1,0 +1,45 @@
+﻿@using CheerSport.Models.ModelsForView;
+@model ModelForTeamView
+@{
+    ViewData["Title"] = "TeamView";
+}
+
+<div id="greywrap" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 centered">
+                <h2 class="centered"><b>Команда клуба  <a asp-controller="Club" asp-action="ClubView" asp-route-id="@Model.selectTeam.Clubid">@Model.allClub.FirstOrDefault(x => x.id == Model.selectTeam.Clubid).name</a></b></h2>
+
+                <hr />
+                <p><b>Название : </b>@Model.selectTeam.name</p>
+                <p><b>Город :</b> @Model.selectTeam.city</p>
+                <hr />
+            </div>
+            <div class="col-lg-1">
+                <button>
+                    <a asp-controller="Club" asp-action="TeamEdit" asp-route-id="@Model.selectTeam.id" class="material-icons">create</a>
+                </button>
+                <form method="post" asp-controller="Club" asp-action="TeamDelete">
+                    <input type="hidden" value="@Model.selectTeam.id" name="id" />
+                    <button>
+                        <a class="material-icons">
+                            delete
+                        </a>
+                    </button>
+
+                </form>
+
+            </div>
+
+         
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
+
+
+
+
+
